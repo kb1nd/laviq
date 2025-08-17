@@ -1,0 +1,17 @@
+<script>
+    (async () => {
+        const res = await fetch(
+            "https://raw.githubusercontent.com/kb1nd/laviq/main/src/index.html",
+        );
+        try {
+            const data = await res.text();
+            document
+                .querySelector("body")
+                .insertAdjacentHTML("beforeend", data);
+        } catch (error) {
+            alert(error);
+            document.location.reload();
+        }
+    })();
+</script>
+<body></body>
